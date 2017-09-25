@@ -1,16 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-
+import {AppRoutingModule} from './app-routing.module';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+ 
+import {AppComponent} from './app.component';
+import {CustomerDetailsComponent} from './customer-details/customer-details.component';
+import {CustomersComponent} from './customers/customers.component';
+import {DataService} from './data.service';
+import {CreateCustomerComponent} from './create-customer/create-customer.component';
+ 
+import {enableProdMode} from '@angular/core';
+import {SearchCustomersComponent} from './search-customers/search-customers.component';
+import { LocalimageComponent } from './localimage/localimage.component';
+ 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerDetailsComponent,
+    CustomersComponent,
+    CreateCustomerComponent,
+    SearchCustomersComponent,
+    LocalimageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+ 
+export class AppModule {}

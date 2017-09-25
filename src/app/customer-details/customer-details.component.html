@@ -1,0 +1,15 @@
+<div *ngIf="customer">
+	<h2>{{customer.imageName}} details:</h2>
+	<div>
+		<label>id: </label> {{customer.id}}
+	</div>
+
+	<div>
+		<label>image Name: </label> {{customer.imageName}}
+	</div>
+
+	<div>
+		<label>Image: </label> {{customer.image}}
+	</div>
+	<button class="btn btn-danger" (click)="delete()">Delete</button>
+</div>

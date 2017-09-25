@@ -1,0 +1,19 @@
+<h3>Find By image Name</h3>
+<div style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			 <input type="text" class="form-control" id="imagename" required [(ngModel)]="imageName"
+				name="imagename">
+		</div>
+ 
+		<div class="btn-group">
+			<button type="submit" class="btn btn-success">Search</button>
+		</div>
+	</form>
+</div>
+<ul>
+	<li *ngFor="let cust of customers">
+		<h4>{{cust.id}} - {{cust.imageName}}</h4>
+		<img src = "{{cust.image}}"> 
+	</li>
+</ul>
