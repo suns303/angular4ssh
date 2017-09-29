@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../customer';
 import {DataService} from '../data.service';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'app-search-customers',
@@ -12,10 +13,11 @@ export class SearchCustomersComponent implements OnInit {
   customers: Customer[];
   
   constructor(private dataService: DataService) {}
- 
+  ticks = 0;
+
   ngOnInit() {
-    this.imageName = "";
   }
+
  
   private searchCustomers() {
     this.dataService.getCustomersByImageName(this.imageName).then(customers => this.customers = customers);

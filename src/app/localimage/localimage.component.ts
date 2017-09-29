@@ -4,6 +4,9 @@ import {DataService} from '../data.service';
 import {Location} from '@angular/common';
 import {CreateCustomerComponent} from '../create-customer/create-customer.component';
 
+
+
+
 @Component({
   selector: 'app-localimage',
   templateUrl: './localimage.component.html',
@@ -11,11 +14,12 @@ import {CreateCustomerComponent} from '../create-customer/create-customer.compon
 })
 export class LocalimageComponent implements OnInit {
 
+  selectedOption : string;
   customer = new Customer;
   submitted = false;
-  constructor(private dataService: DataService,
-    private location: Location) {}
+  constructor(private dataService: DataService, private location: Location) {}
 
+ 
     
   changeListner(event){
     var reader = new FileReader();
@@ -26,8 +30,10 @@ export class LocalimageComponent implements OnInit {
         var base64src = e.target['result'];
         document.getElementById("image")['src'] = base64src;
         document.getElementById("filepath").setAttribute("value",event.target.value);
-    };
+    };   
 }
+
+
 private save(): void {
   this.dataService.create(this.customer);
 }
