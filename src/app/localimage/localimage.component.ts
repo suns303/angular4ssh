@@ -4,6 +4,8 @@ import {DataService} from '../data.service';
 import {Location} from '@angular/common';
 import {CreateCustomerComponent} from '../create-customer/create-customer.component';
 
+
+
 @Component({
   selector: 'app-localimage',
   templateUrl: './localimage.component.html',
@@ -11,34 +13,34 @@ import {CreateCustomerComponent} from '../create-customer/create-customer.compon
 })
 export class LocalimageComponent implements OnInit {
 
+  selectedOption : string;
   customer = new Customer;
   submitted = false;
-  constructor(private dataService: DataService,
-    private location: Location) {}
+  reader = new FileReader;
 
-    
+  constructor(private dataService: DataService, private location: Location) {}
+
+  private save(): void {
+    this.dataService.create(this.customer);
+  }
+
   changeListner(event){
-    var reader = new FileReader();
-    // read the image file as a data URL.
-    reader.readAsDataURL(event.target.files[0]);
+    this.reader.readAsDataURL(event.target.files[0]);
+    this.reader.onloadend = function(e) {
 
-    reader.onload = function(e) {
-        var base64src = e.target['result'];
+        let base64src = e.target['result'];
         document.getElementById("image")['src'] = base64src;
         document.getElementById("filepath").setAttribute("value",event.target.value);
-    };
-}
-private save(): void {
-  this.dataService.create(this.customer);
-}
+    };   
+  }
 
   dbsave(event){
-      this.customer.image = document.getElementById("image")['src'];
-      this.save();
+    this.customer.image = document.getElementById("image")['src'];
+    this.save();
+    alert("save sucess");
   }
 
 
-  ngOnInit() {
-  }
+  ngOnInit(){}
 
 }

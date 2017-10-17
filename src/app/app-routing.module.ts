@@ -4,13 +4,20 @@ import {SearchCustomersComponent} from './search-customers/search-customers.comp
 import {LocalimageComponent} from './localimage/localimage.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {TimerComponent} from './timer/timer.component';
+import {PageComponent}from './page/page.component';
+import { ExcelComponent } from './excel/excel.component';
+
  
 const routes: Routes = [
-  {path: '', redirectTo: 'customer', pathMatch: 'full'},
+  {path: '', redirectTo: '', pathMatch: 'full'},
   {path: 'customer', component: CustomersComponent},
   {path: 'add', component: CreateCustomerComponent},
   {path: 'findbyimagename', component: SearchCustomersComponent},
-  {path:'localimage',component:LocalimageComponent}
+  {path: 'localimage',component:LocalimageComponent},
+  {path: 'timer',component:TimerComponent},
+  {path:'page',component:PageComponent},
+  {path:'excel',component:ExcelComponent}
 ];
  
 @NgModule({

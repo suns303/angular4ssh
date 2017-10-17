@@ -15,8 +15,7 @@ export class CreateCustomerComponent implements OnInit {
   constructor(private dataService: DataService,
     private location: Location) {}
  
-  ngOnInit() {
-  }
+  ngOnInit() {}
  
   newCustomer(): void {
     this.submitted = false;
