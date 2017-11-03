@@ -15,10 +15,8 @@ export class SearchCustomersComponent implements OnInit {
   constructor(private dataService: DataService) {}
   ticks = 0;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
- 
   private searchCustomers() {
     this.dataService.getCustomersByImageName(this.imageName).then(customers => this.customers = customers);
   }

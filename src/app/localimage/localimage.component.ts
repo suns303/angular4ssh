@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Customer} from '../customer';
 import {DataService} from '../data.service';
 import {Location} from '@angular/common';
-import {CreateCustomerComponent} from '../create-customer/create-customer.component';
+
 
 
 

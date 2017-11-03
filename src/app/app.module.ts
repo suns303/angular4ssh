@@ -10,7 +10,6 @@ import {AppComponent} from './app.component';
 import {CustomerDetailsComponent} from './customer-details/customer-details.component';
 import {CustomersComponent} from './customers/customers.component';
 import {DataService} from './data.service';
-import {CreateCustomerComponent} from './create-customer/create-customer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
  
@@ -22,6 +21,11 @@ import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { PageComponent } from './page/page.component';
 import { ExcelComponent } from './excel/excel.component';
 import { saveAs } from 'file-saver';
+import { NewpageComponent } from './newpage/newpage.component';
+
+
+
+
 
 
 @NgModule({
@@ -29,12 +33,13 @@ import { saveAs } from 'file-saver';
     AppComponent,
     CustomerDetailsComponent,
     CustomersComponent,
-    CreateCustomerComponent,
     SearchCustomersComponent,
     LocalimageComponent,
     TimerComponent,
     PageComponent,
     ExcelComponent,
+    NewpageComponent,
+
 
   ],
   imports: [
@@ -44,9 +49,9 @@ import { saveAs } from 'file-saver';
     AppRoutingModule,
     BrowserAnimationsModule,
     MdButtonModule,MdCheckboxModule,
-
   ],
-  providers: [DataService],
+
+  providers: [DataService, ],
   bootstrap: [AppComponent]
 })
  

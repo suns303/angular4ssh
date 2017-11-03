@@ -2,3 +2,28 @@ h1 {
   color: blue;
   font-size: 150%;
 }
+
+
+.show-it{
+  visibility: visible;
+}
+
+.hide-it{
+  visibility: hidden;
+}
+
+ul {  
+  transition: 1s;
+  padding-bottom: 10px;
+  text-align: center;
+}
+nav:hover > ul {
+display: block
+}
+
+nav > ul {
+display: none
+}
+nav {
+  min-height: 20px
+}
